@@ -30,7 +30,9 @@ for gym_id in CUSTOM_GYM_ENVIRONMENT_IDS:
 
 CUSTOM_GYM_ENVIRONMENTS = dict(CUSTOM_GYM_ENVIRONMENTS)
 
-GYM_ENVIRONMENT_IDS = tuple(gym.envs.registry.env_specs.keys())
+# (Lance) gym.envs.registry become a dict. object:
+# https://github.com/openai/gym/issues/3097
+GYM_ENVIRONMENT_IDS = tuple(gym.envs.registry.keys()) # remove ".env_specs"
 GYM_ENVIRONMENTS = defaultdict(list)
 
 

@@ -29,6 +29,14 @@ conda activate softlearning
 pip install -e ${SOFTLEARNING_PATH}
 ```
 
+5. (Lance) Run the following instructions:
+```
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/lance_chao/.mujoco/mujoco210/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
+pip install "cython<3"
+pip install robosuite
+```
+
 The environment should be ready to run. See examples section for examples of how to train and simulate the agents.
 
 Finally, to deactivate and remove the conda environment:
